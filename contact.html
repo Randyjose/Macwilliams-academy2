@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | MacWilliams Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .symbol {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: #fff;
+      color: #007bff;
+      padding: 10px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .symbol:hover {
+      transform: rotate(10deg) scale(1.05);
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #ffeb3b;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* Main Section */
+    main {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 2.3em;
+      color: #007bff;
+      margin-bottom: 25px;
+    }
+
+    .about-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .about-card p {
+      margin-bottom: 20px;
+      font-size: 1.05em;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      text-align: center;
+      padding: 40px 15px;
+      margin-top: 60px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: 0 -4px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="symbol">M.A</div>
+      <h1>MacWilliams Academy</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="assignments.html">Assignments</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About MacWilliams Academy</h2>
+    <div class="about-card">
+      <p>
+        Welcome to <strong>MacWilliams Academy</strong> — a center of learning where 
+        innovation meets excellence. Located in Githurai 45, Nairobi, 
+        we are committed to nurturing learners through holistic education.
+      </p>
+
+      <p>
+        Our mission is to empower students to achieve their full potential 
+        by providing a supportive and forward-thinking academic environment. 
+        We believe in combining modern teaching methods with moral values 
+        to create disciplined and confident global citizens.
+      </p>
+
+      <p>
+        At MacWilliams Academy, learning extends beyond the classroom. 
+        We encourage creativity, critical thinking, and leadership — 
+        preparing our learners to shape the world with knowledge and integrity.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Address:</strong> Githurai 45, Nairobi, Kenya</p>
+    <p><strong>Phone:</strong> +254 728 059 058</p>
+    <p>
+      <strong>Email:</strong> 
+      <a href="mailto:macwilliamsacademy@gmail.com">macwilliamsacademy@gmail.com</a>
+    </p>
+    <p>&copy; 2025 MacWilliams Academy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | MacWilliams Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .symbol {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: #fff;
+      color: #007bff;
+      padding: 10px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .symbol:hover {
+      transform: rotate(10deg) scale(1.05);
+    }
+
+    header h1 {
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      transition: all 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #ffeb3b;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #007bff, #00bfff);
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+
+      nav ul.active {
+        max-height: 300px;
+        opacity: 1;
+        padding: 20px 0;
+        transition: all 0.4s ease;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .about-section h2 {
+      font-size: 2.5em;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 1.05em;
+      color: #444;
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+      padding: 40px;
+      margin-top: 50px;
+      transition: 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 123, 255, 0.25);
+    }
+
+    .info-box h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      text-align: center;
+      padding: 40px 15px;
+      margin-top: 60px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: 0 -4px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="symbol">M.A</div>
+      <h1>MacWilliams Academy</h1>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="assignments.html">Assignments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About MacWilliams Academy</h2>
+    <p>
+      MacWilliams Academy is a modern learning institution dedicated to nurturing academic
+      excellence, creativity, and strong moral values. Located in Githurai 45, Nairobi, Kenya,
+      we are committed to shaping the next generation of leaders and innovators.
+    </p>
+
+    <p>
+      Our mission is to provide a well-rounded education that empowers students to achieve
+      their dreams and positively impact society. We combine technology, discipline, and
+      dedicated teaching to bring out the best in every learner.
+    </p>
+
+    <div class="info-box">
+      <h3>Our Core Values</h3>
+      <p><strong>Excellence:</strong> We strive for the highest standards in academics and character.</p>
+      <p><strong>Innovation:</strong> Encouraging creativity and critical thinking in every subject.</p>
+      <p><strong>Integrity:</strong> Building a culture of honesty, respect, and responsibility.</p>
+      <p><strong>Teamwork:</strong> Fostering collaboration among students, teachers, and the community.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Address:</strong> Githurai 45, Nairobi, Kenya</p>
+    <p><strong>Phone:</strong> +254 728 059 058</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:macwilliamsacademy@gmail.com">macwilliamsacademy@gmail.com</a>
+    </p>
+    <p>&copy; 2025 MacWilliams Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

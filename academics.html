@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academics | MacWilliams Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .symbol {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: #fff;
+      color: #007bff;
+      padding: 10px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .symbol:hover {
+      transform: rotate(10deg) scale(1.05);
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #ffeb3b;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #007bff, #00bfff);
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .academics-hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: #f5f9ff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .academics-hero h2 {
+      color: #007bff;
+      font-size: 2.6em;
+      margin-bottom: 15px;
+    }
+
+    .academics-hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.1em;
+    }
+
+    /* Academic Levels Section */
+    .academic-levels {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .academic-levels h3 {
+      color: #007bff;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    .levels-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .level-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .level-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 123, 255, 0.25);
+    }
+
+    .level-card h4 {
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .level-card p {
+      color: #444;
+    }
+
+    /* CBC Section */
+    .cbc-section {
+      background: #e9f5ff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .cbc-section h3 {
+      color: #007bff;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .cbc-section p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.05em;
+    }
+
+    /* Co-Curricular Section */
+    .co-curricular {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .co-curricular h3 {
+      color: #007bff;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .co-curricular p {
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .activities-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .activities-list li {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .activities-list li:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: #fff;
+      text-align: center;
+      padding: 40px 15px;
+      margin-top: 60px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: 0 -4px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="symbol">M.A</div>
+      <h1>MacWilliams Academy</h1>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html" class="active">Academics</a></li>
+        <li><a href="assignments.html">Assignments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="academics-hero">
+    <h2>Academic Programs</h2>
+    <p>Empowering learners through a Competency-Based Curriculum and holistic development.</p>
+  </section>
+
+  <!-- Academic Levels -->
+  <section class="academic-levels">
+    <h3>School Sections</h3>
+    <div class="levels-container">
+      <div class="level-card">
+        <h4>Pre-Primary</h4>
+        <p>Our Pre-Primary section builds foundational literacy, numeracy, and creativity through play-based learning and exploration.</p>
+      </div>
+
+      <div class="level-card">
+        <h4>Primary</h4>
+        <p>We nurture learners’ curiosity and competence through engaging lessons, teamwork, and continuous assessment aligned with CBC.</p>
+      </div>
+
+      <div class="level-card">
+        <h4>Junior Secondary School</h4>
+        <p>Our Junior Secondary section focuses on skill development, career exploration, and innovation to prepare learners for higher education.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CBC Section -->
+  <section class="cbc-section">
+    <h3>Competency-Based Curriculum (CBC)</h3>
+    <p>MacWilliams Academy follows Kenya’s Competency-Based Curriculum (CBC), focusing on learners’ abilities, talents, and interests to ensure every student achieves their full potential.</p>
+  </section>
+
+  <!-- Co-Curricular -->
+  <section class="co-curricular">
+    <h3>Co-Curricular Activities</h3>
+    <p>We believe education extends beyond the classroom. Our co-curricular programs help learners discover and nurture their talents.</p>
+    <ul class="activities-list">
+      <li>Swimming</li>
+      <li>Skating</li>
+      <li>Karate</li>
+      <li>Music</li>
+      <li>Scouting</li>
+      <li>Chess</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Address:</strong> Githurai 45, Nairobi, Kenya</p>
+    <p><strong>Phone:</strong> +254 728 059 058</p>
+    <p><strong>Email:</strong> macwilliamsacademy@gmail.com</p>
+    <p>&copy; 2025 MacWilliams Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      toggle.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
